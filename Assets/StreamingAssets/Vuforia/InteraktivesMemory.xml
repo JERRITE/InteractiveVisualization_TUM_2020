@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="TenTowers2" size="20.000000 20.000000" />
+    <ImageTarget name="BMW2" size="20.000000 20.000000" />
+    <ImageTarget name="ADAC2" size="20.000000 20.000000" />
+    <ImageTarget name="TenTowers" size="20.000000 20.000000" />
+    <ImageTarget name="BMW" size="20.000000 20.000000" />
+    <ImageTarget name="ADAC" size="20.000000 20.000000" />
+  </Tracking>
+</QCARConfig>
