@@ -7,6 +7,9 @@ TagManager:
   - Building
   - Piece
   - Info
+  - ADAC
+  - BMW
+  - TenTowers
   layers:
   - Default
   - TransparentFX
