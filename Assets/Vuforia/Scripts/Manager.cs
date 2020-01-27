@@ -10,7 +10,7 @@ public class Manager : MonoBehaviour
     private Hashtable foundTracked = new Hashtable();                 //alle objekte die gematched wurden und gerade getracked
 
     private float angMatch = 5f;                    //winkel in dem die Karten zueinander stehen müssenum zu matchen
-    private float distMatch = 5f;                   //distanz in dem die Karten voneinander entfernt sein dürfen um zu matchen
+    private float distMatch = 10.0f;                   //distanz in dem die Karten voneinander entfernt sein dürfen um zu matchen
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +50,8 @@ public class Manager : MonoBehaviour
 
                     //wen die entfernung und die rotation kleiner als der spielraum(distmatch und angmatch) 
                     //sind dann werden die objekte in found hinzugefügt 
-                    if (distance <= distMatch && angle1 <= angMatch)
+                    Debug.Log("Die distanz der objekte ist " + distance + "--------------------------------------------------");
+                    if (distance <= distMatch /*&& angle1 <= angMatch*/)
                     {
                         if (!found.ContainsKey(obj1.getName()))
                         {

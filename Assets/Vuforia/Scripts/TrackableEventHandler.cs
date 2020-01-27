@@ -69,6 +69,7 @@ public class TrackableEventHandler : MonoBehaviour, ITrackableEventHandler
                   " " + mTrackableBehaviour.CurrentStatus +
                   " -- " + mTrackableBehaviour.CurrentStatusInfo);
 
+        Debug.Log("der status ist momentan war " + m_PreviousStatus + "jetzt ist er " + m_NewStatus + " ---- ");
         if (newStatus == TrackableBehaviour.Status.DETECTED ||
             newStatus == TrackableBehaviour.Status.TRACKED /*||
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED*/)
@@ -76,7 +77,7 @@ public class TrackableEventHandler : MonoBehaviour, ITrackableEventHandler
             OnTrackingFound();
         }
         else if ((previousStatus == TrackableBehaviour.Status.TRACKED &&
-                 newStatus == TrackableBehaviour.Status.NO_POSE) || newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
+                 newStatus == TrackableBehaviour.Status.NO_POSE) || newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED )
         {
             OnTrackingLost();
         }
