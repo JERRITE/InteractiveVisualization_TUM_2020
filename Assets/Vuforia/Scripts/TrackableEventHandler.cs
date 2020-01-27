@@ -70,13 +70,13 @@ public class TrackableEventHandler : MonoBehaviour, ITrackableEventHandler
                   " -- " + mTrackableBehaviour.CurrentStatusInfo);
 
         if (newStatus == TrackableBehaviour.Status.DETECTED ||
-            newStatus == TrackableBehaviour.Status.TRACKED ||
-            newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
+            newStatus == TrackableBehaviour.Status.TRACKED /*||
+            newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED*/)
         {
             OnTrackingFound();
         }
-        else if (previousStatus == TrackableBehaviour.Status.TRACKED &&
-                 newStatus == TrackableBehaviour.Status.NO_POSE)
+        else if ((previousStatus == TrackableBehaviour.Status.TRACKED &&
+                 newStatus == TrackableBehaviour.Status.NO_POSE) || newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
             OnTrackingLost();
         }

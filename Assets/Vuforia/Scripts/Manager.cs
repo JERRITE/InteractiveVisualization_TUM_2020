@@ -5,9 +5,9 @@ using UnityEngine;
 public class Manager : MonoBehaviour
 {
     //In der liste kann man später vergleichen ob ein Objekt gezeigt wird und welchen Abstand dieses hat. Key dabei ist der name des TargetImages
-    private List<BuildingObject> ht;
-    private Hashtable found;                        //besteht aus dem namen des objekt als key und einer BuildingObjectreferenz
-    private Hashtable foundTracked;                 //alle objekte die gematched wurden und gerade getracked
+    private List<BuildingObject> ht = new List<BuildingObject>();
+    private Hashtable found = new Hashtable();       //besteht aus dem namen des objekt als key und einer BuildingObjectreferenz
+    private Hashtable foundTracked = new Hashtable();                 //alle objekte die gematched wurden und gerade getracked
 
     private float angMatch = 5f;                    //winkel in dem die Karten zueinander stehen müssenum zu matchen
     private float distMatch = 5f;                   //distanz in dem die Karten voneinander entfernt sein dürfen um zu matchen
@@ -15,9 +15,6 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ht = new List<BuildingObject>();
-        found = new Hashtable();
-        foundTracked = new Hashtable();
     }
 
     // Update is called once per frame
@@ -85,6 +82,7 @@ public class Manager : MonoBehaviour
     //hinzufügen eines BuildingObjects in die hastable  // 0 bedeutet false; 1 bedeutet true; und 2 bedeutet, dass das found objekt schon drinnen.
     public int addTrackedImageToList(string name, string tag, GameObject imageTarget)
     {
+        
         //für die gefunden objekte 
         if (found.ContainsKey(name))
         {
